@@ -1,4 +1,4 @@
-# pwd
+# demo
 
 > A Vue.js project
 
