@@ -4,6 +4,8 @@ import Router from 'vue-router'
 import App from '../App'
 import PaulZJ from '@/components/zj'
 import login from '@/components/login/login'
+import profile from '@/components/profile/profile'
+import info from '@/components/profile/children/info'
 
 Vue.use(Router)
 
@@ -24,6 +26,14 @@ export default new Router({
         {
           path: '/login',
           component: login
+        },
+        {
+          path: '/profile',
+          component: profile,
+          children: [{
+            path: 'info',
+            component: info
+          }]
         }
       ]
     }
