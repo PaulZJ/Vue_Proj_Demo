@@ -11,6 +11,8 @@ import setusername from '@/components/profile/children/children/setusername'
 import add from '@/components/profile/children/children/children/add'
 import addDetail from '@/components/profile/children/children/children/children/addDetail'
 import forget from '@/components/forget/forget'
+import city from '@/components/city/city'
+import msite from '@/components/msite/msite'
 
 Vue.use(Router)
 
@@ -27,6 +29,15 @@ export default new Router({
         {
           path: '/home',
           component: PaulZJ
+        },
+        {
+          path: '/city/:cityid',
+          component: city
+        },
+        {
+          path: 'msite',
+          component: msite,
+          meta: {keepAlive: true}
         },
         {
           path: '/login',
