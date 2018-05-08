@@ -6,6 +6,11 @@ import PaulZJ from '@/components/zj'
 import login from '@/components/login/login'
 import profile from '@/components/profile/profile'
 import info from '@/components/profile/children/info'
+import address from '@/components/profile/children/children/address'
+import setusername from '@/components/profile/children/children/setusername'
+import add from '@/components/profile/children/children/children/add'
+import addDetail from '@/components/profile/children/children/children/children/addDetail'
+import forget from '@/components/forget/forget'
 
 Vue.use(Router)
 
@@ -32,8 +37,28 @@ export default new Router({
           component: profile,
           children: [{
             path: 'info',
-            component: info
+            component: info,
+            children: [{
+              path: 'address',
+              component: address,
+              children: [{
+                path: 'add',
+                component: add,
+                children: [{
+                  path: 'addDetail',
+                  component: addDetail
+                }]
+              }]
+            },
+            {
+              path: 'setusername',
+              component: setusername
+            }]
           }]
+        },
+        {
+          path: '/forget',
+          component: forget
         }
       ]
     }
