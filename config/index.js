@@ -10,7 +10,39 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/v1': {
+        // 测试环境
+        target: 'http://localhost:8001',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+            '^/v1': '/v1'   //需要rewrite重写的,
+        }
+      },
+      '/v2': {
+        // 测试环境
+        target: 'http://localhost:8001',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+            '^/v2': '/v2'   //需要rewrite重写的,
+        }
+      },
+      '/v3': {
+        // 测试环境
+        target: 'http://localhost:8001',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+            '^/v3': '/v3'   //需要rewrite重写的,
+        }
+      },
+      '/shopping/restaurants': {
+        target: 'http://cangdu.org:8001',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/shopping/restaurants': '/shopping/restaurants'
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
