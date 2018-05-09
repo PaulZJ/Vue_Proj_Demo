@@ -34,6 +34,18 @@ import coupon from '@/components/benefit/children/coupon'
 import exchange from '@/components/benefit/children/exchange'
 import hbDescription from '@/components/benefit/children/hbDescription'
 import hbHistory from '@/components/benefit/children/hbHistory'
+import point from '@/components/point/point'
+import pointDetail from '@/components/point/children/detail'
+import vipcard from '@/components/vipcard/vipcard'
+import useCard from '@/components/vipcard/children/useCard'
+import invoiceRecord from '@/components/vipcard/children/invoiceRecord'
+import vipDescription from '@/components/vipcard/children/vipDescription'
+import food from '@/components/food/food'
+import balance from '@/components/balance/balance'
+import balanceDetail from '@/components/balance/children/detail'
+import service from '@/components/service/service'
+import questionDetail from '@/components/service/children/questionDetail'
+import download from '@/components/download/download'
 
 Vue.use(Router)
 
@@ -143,8 +155,12 @@ export default new Router({
             path: 'chooseAddress',
             component: chooseAddress,
             children: [{
-              path: 'searchAddress',
-              component: searchAddress
+              path: 'addAddress',
+              component: addAddress,
+              children: [{
+                path: 'searchAddress',
+                component: searchAddress
+              }]
             }]
           }]
         },
@@ -171,6 +187,54 @@ export default new Router({
             path: 'commend',
             component: commend
           }]
+        },
+        {
+          path: '/points',
+          component: point,
+          children: [{
+            path: 'detail',
+            component: pointDetail
+          }]
+        },
+        {
+          path: '/vipcard',
+          component: vipcard,
+          children: [{
+            path: 'invoiceRecord',
+            component: invoiceRecord
+          },
+          {
+            path: 'useCart',
+            component: useCard
+          },
+          {
+            path: 'vipDescription',
+            component: vipDescription
+          }]
+        },
+        {
+          path: '/food',
+          component: food
+        },
+        {
+          path: '/balance',
+          component: balance,
+          children: [{
+            path: 'detail',
+            component: balanceDetail
+          }]
+        },
+        {
+          path: '/service',
+          component: service,
+          children: [{
+            path: 'questionDetail',
+            component: questionDetail
+          }]
+        },
+        {
+          path: '/download',
+          component: download
         }
       ]
     }
