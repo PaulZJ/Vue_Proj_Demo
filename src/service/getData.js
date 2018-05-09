@@ -296,7 +296,6 @@ export const placeOrders = (user_id, cart_id, address_id, description, entities,
 	sig,
 }, 'POST');
 
-
 /**
  * 重新发送订单验证码
  */
