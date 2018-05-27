@@ -35,11 +35,43 @@ module.exports = {
             '^/v3': '/v3'   //需要rewrite重写的,
         }
       },
-      '/shopping/restaurants': {
+      '/promotion/v2/users': {
+        // 测试环境
+        target: 'http://localhost:7889',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '/promotion/v2/users': '/promotion/v2/users'
+        }
+      },
+      '/bos/v2/users': {
+        // 测试环境
+        target: 'http://localhost:7889',  // 接口域名
+        changeOrigin: true,  //是否跨域
+        pathRewrite: {
+          '/bos/v2/users': '/bos/v2/users'
+        }
+      },
+      '/payapi/payment': {
+        //测试环境
+        target: 'http;//localhost:7889',
+        changeOrigin: true,
+        pathRewrite: {
+          '/payapi/payment': '/payapi/payment'
+        }
+      },
+      '/ugc/v2': {
+        //测试环境
         target: 'http://cangdu.org:8001',
         changeOrigin: true,
         pathRewrite: {
-          '^/shopping/restaurants': '/shopping/restaurants'
+          '/ugc/v2': '/ugc/v2'
+        }
+      },
+      '/shopping': {
+        target: 'http://cangdu.org:8001',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/shopping': '/shopping'
         }
       }
     },
